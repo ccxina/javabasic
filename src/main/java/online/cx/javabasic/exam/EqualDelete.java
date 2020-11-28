@@ -10,7 +10,6 @@ public class EqualDelete extends Base{
     @Override
     public boolean judgeString(String s) {
         // 判断相等
-        // 测试提交
         return false;
     }
 }
