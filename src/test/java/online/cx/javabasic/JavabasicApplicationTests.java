@@ -61,6 +61,7 @@ class JavabasicApplicationTests {
 //            demo.setNum(demo.getNum() + RandomUtils.nextInt(1, 4));
         });
 
+        System.out.println("修改邮箱");
         demoRepository.saveAll(demoList);
 //
 //        demoList.forEach(System.out::println);
