@@ -1,0 +1,12 @@
+logging:
+  level:
+    org:
+      springframework:
+        data:
+          mongodb:
+            core: DEBUG
+spring:
+  data:
+    mongodb:
+      database: test
+      uri: mongodb://localhost:27017/test
