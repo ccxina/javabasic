@@ -7,45 +7,45 @@ logging:
                         core: DEBUG
 server:
     port: 8081
-spring:
-    data:
-        # mongodb 配置
-        mongodb:
-            database: test
-            uri: mongodb://localhost:27017/test
-    kafka:
-        # 节点
-        bootstrap-servers: 127.0.0.1:9092
-        # 消费者
-        consumer:
-            auto:
-                commit:
-                    interval:
-                        ms: 1000
-            auto-offset-reset: latest
-            enable-auto-commit: true
-            key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-            properties:
-                group:
-                    id: defaultConsumerGroup
-                request:
-                    timeout:
-                        ms: 180000
-                session:
-                    timeout:
-                        ms: 120000
-            value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-
-        listener:
-            missing-topics-fatal: false
-        # 生产者
-        producer:
-            acks: 1
-            batch-size: 16384
-            buffer-memory: 33554432
-            key-serializer: org.apache.kafka.common.serialization.StringSerializer
-            properties:
-                linger:
-                    ms: 0
-            retries: 0
-            value-serializer: org.apache.kafka.common.serialization.StringSerializer
+#spring:
+#    data:
+#        # mongodb 配置
+#        mongodb:
+#            database: test
+#            uri: mongodb://localhost:27017/test
+#    kafka:
+#        # 节点
+#        bootstrap-servers: 127.0.0.1:9092
+#        # 消费者
+#        consumer:
+#            auto:
+#                commit:
+#                    interval:
+#                        ms: 1000
+#            auto-offset-reset: latest
+#            enable-auto-commit: true
+#            key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#            properties:
+#                group:
+#                    id: defaultConsumerGroup
+#                request:
+#                    timeout:
+#                        ms: 180000
+#                session:
+#                    timeout:
+#                        ms: 120000
+#            value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#
+#        listener:
+#            missing-topics-fatal: false
+#        # 生产者
+#        producer:
+#            acks: 1
+#            batch-size: 16384
+#            buffer-memory: 33554432
+#            key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#            properties:
+#                linger:
+#                    ms: 0
+#            retries: 0
+#            value-serializer: org.apache.kafka.common.serialization.StringSerializer
