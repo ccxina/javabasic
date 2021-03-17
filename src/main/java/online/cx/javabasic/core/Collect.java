@@ -1,4 +1,4 @@
-package online.cx.javabasic.stream;
+package online.cx.javabasic.core;
 
 import java.util.*;
 import java.util.stream.Collectors;
