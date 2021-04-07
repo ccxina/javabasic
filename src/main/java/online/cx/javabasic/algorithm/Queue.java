@@ -1,40 +1,40 @@
 package online.cx.javabasic.algorithm;
 
+
 import java.util.Iterator;
 
 /**
  * @author Cao Xin
- * @since 2021/3/19
+ * @since 2021/4/7
  */
-public class Stack<Item> implements Iterable<Item> {
-    private int N;
+public class Queue<Item> implements Iterable<Item> {
+
     private Node first;
-
-
-    private class Node {
-        Item item;
-        Node next;
-    }
+    private Node last;
+    private int N;
 
     public boolean isEmpty() {
-        return N == 0;
+        return first == null;
     }
 
     public int size() {
         return N;
     }
 
-    public void push(Item item) {
-        Node oldFirst = first;
-        first = new Node();
-        first.item = item;
-        first.next = oldFirst;
+    public void enqueue(Item item) {
+        Node oldLast = last;
+        last = new Node();
+        last.item = item;
+        last.next = null;
+        if (isEmpty()) first = last;
+        else oldLast.next = last;
         N++;
     }
 
-    public Item pop() {
+    public Item dequeue() {
         Item item = first.item;
         first = first.next;
+        if (isEmpty()) last = null;
         N--;
         return item;
     }
@@ -42,6 +42,11 @@ public class Stack<Item> implements Iterable<Item> {
     @Override
     public Iterator<Item> iterator() {
         return new ListIterator();
+    }
+
+    private class Node {
+        Item item;
+        Node next;
     }
 
     private class ListIterator implements Iterator<Item> {

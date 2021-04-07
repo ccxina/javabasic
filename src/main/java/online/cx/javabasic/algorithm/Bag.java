@@ -4,39 +4,18 @@ import java.util.Iterator;
 
 /**
  * @author Cao Xin
- * @since 2021/3/19
+ * @since 2021/4/7
  */
-public class Stack<Item> implements Iterable<Item> {
-    private int N;
+public class Bag<Item> implements Iterable<Item> {
+
     private Node first;
 
 
-    private class Node {
-        Item item;
-        Node next;
-    }
-
-    public boolean isEmpty() {
-        return N == 0;
-    }
-
-    public int size() {
-        return N;
-    }
-
-    public void push(Item item) {
+    public void add(Item item){
         Node oldFirst = first;
         first = new Node();
         first.item = item;
         first.next = oldFirst;
-        N++;
-    }
-
-    public Item pop() {
-        Item item = first.item;
-        first = first.next;
-        N--;
-        return item;
     }
 
     @Override
@@ -61,4 +40,8 @@ public class Stack<Item> implements Iterable<Item> {
         }
     }
 
+    private class Node {
+        Item item;
+        Node next;
+    }
 }
