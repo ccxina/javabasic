@@ -34,4 +34,14 @@ public class Node {
         }
         System.out.println();
     }
+
+    public boolean find(int value) {
+        Node current = this;
+        while (current != null){
+            if (this.getValue() == value) return true;
+            current = current.getNext();
+        }
+        return false;
+    }
+
 }

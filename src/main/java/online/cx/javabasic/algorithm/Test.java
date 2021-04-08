@@ -26,5 +26,6 @@ public class Test {
         while (stringIterable.hasNext()) {
             System.out.println(stringIterable.next());
         }
+        System.out.println(stringStack.peek());
     }
 }
