@@ -13,6 +13,7 @@ public class SortCompare {
         switch (method) {
             case "Insertion": Insertion.sort(a);break;
             case "Selection": Selection.sort(a);break;
+            case "Shell": Shell.sort(a);break;
             default:break;
         }
         long end = System.currentTimeMillis();
@@ -32,9 +33,10 @@ public class SortCompare {
     }
 
     public static void main(String[] args) {
-        int N = 1000;
+        int N = 8192;
         int T = 100;
         System.out.printf("method: %s, cost time: %.1f \n", "Insertion", timeRandomInput("Insertion", N, T));
         System.out.printf("method: %s, cost time: %.1f \n", "Selection", timeRandomInput("Selection", N, T));
+        System.out.printf("method: %s, cost time: %.1f \n", "Shell", timeRandomInput("Shell", N, T));
     }
 }
