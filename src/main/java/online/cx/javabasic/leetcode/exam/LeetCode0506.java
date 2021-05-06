@@ -59,7 +59,27 @@ public class LeetCode0506 {
         return res;
     }
 
-    public static void main(String[] args) {
-        System.out.println(maxCoins(new int[]{9,8,7,6,5,1,2,3,4}));
+
+
+    /**
+     * 4. 寻找两个正序数组的中位数
+     */
+    public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+        int length = nums1.length + nums2.length;
+        int[] resArr = new int[length];
+        int k = 0;
+        for (int i: nums1) {
+            resArr[k++] = i;
+        }
+        for (int i: nums2) {
+            resArr[k++] = i;
+        }
+        Arrays.sort(resArr);
+        int i = length / 2;
+        if (length % 2 == 0) {
+            return (resArr[i - 1] + resArr[i + 1]) / 2.0;
+        } else {
+            return resArr[i - 1];
+        }
     }
 }
