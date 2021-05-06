@@ -6,7 +6,7 @@ import java.util.*;
  * @author Cao Xin
  * @since 2021/5/6
  */
-public class Decode {
+public class LeetCode0506 {
     /**
      * 1720. 解码异或后的数组
      * a ^ b = c
@@ -45,10 +45,21 @@ public class Decode {
         return resInt;
     }
 
-    public static void main(String[] args) {
-        int[] encoded = new int[]{1,2,2,1};
-        int[] encoded1 = new int[]{2,2};
-        System.out.println(Arrays.toString(intersection(encoded1, encoded)));
+    /**
+     * 1561. 你可以获得的最大硬币数目
+     */
+    public static int maxCoins(int[] piles) {
+        Arrays.sort(piles);
+        System.out.println(Arrays.toString(piles));
+        int res = 0;
+        for(int i = piles.length - 2; i >= piles.length / 3 - 1; i = i - 2) {
+            System.out.println(i);
+            res += piles[i];
+        }
+        return res;
     }
 
+    public static void main(String[] args) {
+        System.out.println(maxCoins(new int[]{9,8,7,6,5,1,2,3,4}));
+    }
 }
