@@ -9,10 +9,6 @@ public class LeetCode0507 {
 
     /**
      * 1486. 数组异或操作
-     *
-     * @param n
-     * @param start
-     * @return
      */
     public static int xorOperation(int n, int start) {
         int res = start;
