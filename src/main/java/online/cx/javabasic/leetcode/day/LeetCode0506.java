@@ -1,4 +1,4 @@
-package online.cx.javabasic.leetcode.exam;
+package online.cx.javabasic.leetcode.day;
 
 import java.util.*;
 
