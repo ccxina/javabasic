@@ -39,7 +39,7 @@ public class LeetCode0507 {
     }
 
     /**
-     * 122. 买卖股票的最佳时机 II
+     * 122. 买卖股票的最佳时机 II 贪心解法
      */
     public static int maxProfit(int[] prices) {
         int res = 0;
@@ -49,6 +49,24 @@ public class LeetCode0507 {
             }
         }
         return res;
+    }
+
+    /**
+     * 121. 买卖股票的最佳时机
+     * @param prices
+     * @return
+     */
+    public static int maxProfit1(int[] prices) {
+        int minprice = Integer.MAX_VALUE;
+        int maxprofit = 0;
+        for (int i = 0; i < prices.length; i++) {
+            if (prices[i] < minprice) {
+                minprice = prices[i];
+            } else if (prices[i] - minprice > maxprofit) {
+                maxprofit = prices[i] - minprice;
+            }
+        }
+        return maxprofit;
     }
 
     public static void main(String[] args) {
