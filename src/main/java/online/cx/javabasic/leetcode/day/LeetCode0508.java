@@ -1,7 +1,6 @@
 package online.cx.javabasic.leetcode.day;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author Cao Xin
@@ -90,10 +89,63 @@ public class LeetCode0508 {
         res[0] = 1;
         return res;
     }
+
+    public static int[] twoSum(int[] nums, int target) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            if (map.containsKey(target - nums[i])) {
+                return new int[]{i, map.get(target - nums[i])};
+            }
+            map.put(nums[i], i);
+        }
+        return null;
+    }
+
+
+    /**
+     * 有效的数独
+     */
+    public boolean isValidSudoku(char[][] board) {
+        int length = board.length;
+        int[][] line = new int[length][length];
+        int[][] column = new int[length][length];
+        int[][] cell = new int[length][length];
+        for (int i = 0 ; i < board.length; i++) {
+            for (int j = 0; j < board[i].length; j++) {
+                if (board[i][j] == '.') {
+                    continue;
+                }
+                int num = board[i][j] - '0' - 1;
+                int k = i / 3 * 3 + j / 3;
+                if (line[i][num] != 0 || column[j][num] != 0 || cell[k][num] != 0)
+                    return false;
+                // 表示第i行有num这个数字，第j列有num这个数字，对应的单元格内也有num这个数字
+                line[i][num] = column[j][num] = cell[k][num] = 1;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * 旋转图像
+     */
+    public static void rotate(int[][] matrix) {
+        int length = matrix.length;
+        for (int i = 0; i < length; i ++) {
+            for (int j = 0; j < i ; j ++) {
+                int temp = matrix[i][j];
+                matrix[i][j] = matrix[j][i];
+                matrix[j][i] = temp;
+            }
+        }
+        for (int[] ints : matrix) {
+            int l = 0, r = length - 1;
+            change(l, r, ints);
+        }
+    }
+
     public static void main(String[] args) {
-        int[] nums = new int[]{1,2,3,4,5,6,7};
-        System.out.println(Arrays.toString(nums));
-        rotate2(nums, 1);
-        System.out.println(Arrays.toString(nums));
+        int[][] matrix = new int[][]{{1,2,3},{4,5,6},{7,8,9}};
+        rotate(matrix);
     }
 }
