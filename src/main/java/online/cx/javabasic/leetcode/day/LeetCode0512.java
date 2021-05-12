@@ -46,7 +46,7 @@ public class LeetCode0512 {
     }
 
     public boolean isPalindrome(String s) {
-        String newStr = s.replaceAll("[\\pP\\p{Punct}]","").replaceAll(" ","").toLowerCase();
+        String newStr = s.replaceAll("[\\pP\\p{Punct}]", "").replaceAll(" ", "").toLowerCase();
         char[] chars = newStr.toCharArray();
         int l = 0, r = chars.length - 1;
         while (l < r) {
@@ -104,12 +104,96 @@ public class LeetCode0512 {
         return -1;
     }
 
+    /**
+     * 外观数列
+     */
+    public static String countAndSay(int n) {
+        if (n == 1) {
+            return "1";
+        }
+        String last = "1";
+        for (int i = 1; i < n; i++) {
+            String temp = last;
+            StringBuilder item = new StringBuilder();
+            int count = 1;
+            int first = temp.charAt(0) - '0';
+            for (int j = 1; j < temp.length(); j++) {
+                if (temp.charAt(j) == temp.charAt(j - 1)) {
+                    count++;
+                } else {
+                    item.append(count).append(first);
+                    count = 1;
+                    first = temp.charAt(j) - '0';
+                }
+            }
+            last = item.append(count).append(first).toString();
+        }
+        return last;
+    }
+
+    /**
+     * 最长公共前缀
+     */
+    public static String longestCommonPrefix(String[] strs) {
+        String res = strs[0];
+        for (String str : strs) {
+            while (str.indexOf(res) != 0) {
+                res = res.substring(0, res.length() - 1);
+            }
+        }
+        return res;
+    }
+
+
+    class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode() {
+        }
+
+        ListNode(int val) {
+            this.val = val;
+        }
+
+        ListNode(int val, ListNode next) {
+            this.val = val;
+            this.next = next;
+        }
+    }
+
+    /**
+     * 删除列表倒数第n个节点
+     */
+    public ListNode removeNthFromEnd(ListNode head, int n) {
+        ListNode pre = head;
+        int last = length(head) - n;
+        if (last == 0) {
+            return head.next;
+        }
+        for (int i = 0; i < last - 1; i++) {
+            pre = pre.next;
+        }
+        pre.next = pre.next.next;
+        return head;
+    }
+
+    public int length(ListNode head) {
+        int i = 0;
+        while (head != null) {
+            i++;
+            head = head.next;
+        }
+        return i;
+    }
+
 
     public static void main(String[] args) {
 //        int[] arr = new int[]{4,8,2,10};
 //        int[][] queries = new int[][]{{2,3},{1,3},{0,0},{0,3}};
 //        int[] res = xorQueries(arr, queries);
 //        System.out.println(Arrays.toString(res));
-        System.out.println(myAtoi("42"));
+//        System.out.println(myAtoi("42"));
+        System.out.println(countAndSay(4));
     }
 }
