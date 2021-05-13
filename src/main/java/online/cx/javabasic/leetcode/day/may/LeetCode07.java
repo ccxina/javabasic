@@ -1,4 +1,4 @@
-package online.cx.javabasic.leetcode.day;
+package online.cx.javabasic.leetcode.day.may;
 
 import java.util.Arrays;
 
@@ -6,7 +6,7 @@ import java.util.Arrays;
  * @author Cao Xin
  * @since 2021/5/7
  */
-public class LeetCode0507 {
+public class LeetCode07 {
 
 
     /**

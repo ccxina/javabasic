@@ -1,4 +1,4 @@
-package online.cx.javabasic.leetcode.day;
+package online.cx.javabasic.leetcode.day.may;
 
 import java.util.*;
 
@@ -6,7 +6,7 @@ import java.util.*;
  * @author Cao Xin
  * @since 2021/5/8
  */
-public class LeetCode0508 {
+public class LeetCode08 {
 
     /**
      * 旋转数组

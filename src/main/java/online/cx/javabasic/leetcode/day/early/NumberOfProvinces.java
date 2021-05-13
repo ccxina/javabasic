@@ -1,4 +1,4 @@
-package online.cx.javabasic.leetcode.day;
+package online.cx.javabasic.leetcode.day.early;
 
 
 

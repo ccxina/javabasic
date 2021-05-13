@@ -1,4 +1,4 @@
-package online.cx.javabasic.leetcode.day;
+package online.cx.javabasic.leetcode.day.may;
 
 import java.util.Arrays;
 import java.util.Locale;
@@ -7,7 +7,7 @@ import java.util.Locale;
  * @author Cao Xin
  * @since 2021/5/12
  */
-public class LeetCode0512 {
+public class LeetCode12 {
 
     /**
      * 1310. 子数组异或查询

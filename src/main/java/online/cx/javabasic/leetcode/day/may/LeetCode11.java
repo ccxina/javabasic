@@ -1,4 +1,4 @@
-package online.cx.javabasic.leetcode.day;
+package online.cx.javabasic.leetcode.day.may;
 
 import java.util.*;
 
@@ -6,7 +6,7 @@ import java.util.*;
  * @author Cao Xin
  * @since 2021/5/11
  */
-public class LeetCode0511 {
+public class LeetCode11 {
     /**
      *    1734. 解码异或后的排列
      */
