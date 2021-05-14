@@ -1,5 +1,7 @@
 package online.cx.javabasic.leetcode.day.may;
 
+import online.cx.javabasic.leetcode.utils.ListNode;
+
 import java.util.Arrays;
 import java.util.Locale;
 
@@ -142,24 +144,6 @@ public class LeetCode12 {
             }
         }
         return res;
-    }
-
-
-    class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
     }
 
     /**

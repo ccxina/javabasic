@@ -1,6 +1,11 @@
 package online.cx.javabasic.leetcode.day.may;
 
 
+import online.cx.javabasic.leetcode.utils.ListNode;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author Cao Xin
  * @since 2021/5/14
@@ -25,7 +30,46 @@ public class LeetCode14 {
         return res.toString();
     }
 
+
+
+    /**
+     * 链表反转
+     * @param head
+     * @return
+     */
+    public static ListNode reverseList(ListNode head) {
+        List<Integer> list = new ArrayList<>();
+        ListNode root = head;
+        while (root != null) {
+            list.add(root.val);
+            root = root.next;
+        }
+        if (list.isEmpty()) {return null;}
+        if (list.size() == 1) {return head;}
+        ListNode pre = new ListNode(list.get(list.size() - 1));
+        ListNode cur = pre;
+        for (int i = list.size() - 2; i >= 0; i --) {
+            cur.next = new ListNode(list.get(i));
+            cur = cur.next;
+        }
+        return pre;
+    }
+
+    public static ListNode reverseList1(ListNode head) {
+        ListNode pre = null;
+        ListNode cur = head;
+        while (cur != null) {
+            ListNode next = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = next;
+        }
+        return pre;
+    }
+
     public static void main(String[] args) {
-        System.out.println(intToRoman(1994));
+//        System.out.println(intToRoman(1994));
+        ListNode head = new ListNode(1);
+        ListNode res = reverseList(head);
     }
 }
