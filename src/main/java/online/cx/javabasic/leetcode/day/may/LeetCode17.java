@@ -6,7 +6,7 @@ import online.cx.javabasic.leetcode.utils.TreeNode;
  * @author Cao Xin
  * @since 2021/5/17
  */
-public class LeetCode0517 {
+public class LeetCode17 {
 
     // x 的信息
     int x;
